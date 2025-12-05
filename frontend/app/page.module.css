@@ -650,7 +650,7 @@
 }
 
 .accordionContent {
-  padding: 0 1.5rem 1.5rem;
+  padding: 1.5rem 1.5rem 1.5rem;
   color: var(--gray-700);
   line-height: 1.7;
 }
