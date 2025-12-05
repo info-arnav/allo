@@ -1,15 +1,11 @@
-// Google Analytics event tracking utilities
-
 export const GA_MEASUREMENT_ID = 'G-GLYXD2SJN6';
 
-// Generic event tracking
 export const trackEvent = (eventName, eventParams = {}) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', eventName, eventParams);
   }
 };
 
-// Specific event trackers for common actions
 export const trackWhatsAppClick = (location) => {
   trackEvent('whatsapp_click', {
     event_category: 'engagement',
@@ -49,7 +45,6 @@ export const trackEmailClick = () => {
   });
 };
 
-// Conversion tracking
 export const trackOrderIntent = () => {
   trackEvent('order_intent', {
     event_category: 'conversion',

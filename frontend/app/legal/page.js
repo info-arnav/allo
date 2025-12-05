@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import styles from '../page.module.css';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 
 export default function Legal() {
   const [openSection, setOpenSection] = useState(null);
@@ -12,6 +14,7 @@ export default function Legal() {
 
   return (
     <div className={styles.page}>
+      <Navigation />
       <main className={styles.main}>
         <div className={styles.legalContainer}>
           <h1 className={styles.legalTitle}>Terms of Service</h1>
@@ -279,6 +282,7 @@ export default function Legal() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

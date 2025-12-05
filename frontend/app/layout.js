@@ -75,7 +75,8 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/logo-circle.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/logo-circle.png" />
-        <meta name="theme-color" content="#000000" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#F6B215" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <GoogleAnalytics GA_MEASUREMENT_ID="G-GLYXD2SJN6" />

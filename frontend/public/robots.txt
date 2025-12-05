@@ -5,5 +5,5 @@ Allow: /
 # Sitemap location
 Sitemap: https://www.allo.co.in/sitemap.xml
 
-# Crawl delay (optional)
+# Crawl delay
 Crawl-delay: 1

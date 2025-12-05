@@ -1,7 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './page.module.css';
+import styles from '../page.module.css';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 
 export default function Privacy() {
   const [openSection, setOpenSection] = useState(null);
@@ -12,6 +14,7 @@ export default function Privacy() {
 
   return (
     <div className={styles.page}>
+      <Navigation />
       <main className={styles.main}>
         <div className={styles.legalContainer}>
           <h1 className={styles.legalTitle}>Privacy Policy</h1>
@@ -212,6 +215,7 @@ export default function Privacy() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

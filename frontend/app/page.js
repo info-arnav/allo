@@ -3,9 +3,10 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { trackWhatsAppClick, trackCTAClick, trackEmailClick, trackOrderIntent } from "../lib/analytics";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 
 export default function Home() {
-  // Structured data for SEO
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -47,33 +48,9 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className={styles.page}>
-        {/* Hero Section */}
-        <header className={styles.header}>
-          <nav className={styles.nav}>
-            <div className={styles.navContainer}>
-              <Image
-                src="/logo.svg"
-                alt="Allo Logo"
-                width={120}
-                height={40}
-                priority
-                className={styles.navLogo}
-              />
-              <a 
-                href="https://wa.me/919999999999" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={styles.ctaButton}
-                onClick={() => trackWhatsAppClick('navigation')}
-              >
-                Order on WhatsApp
-              </a>
-            </div>
-          </nav>
-        </header>
+        <Navigation />
 
         <main className={styles.main}>
-          {/* Hero */}
           <section className={styles.hero}>
             <div className={styles.heroContent}>
               <h1 className={styles.heroTitle}>
@@ -121,7 +98,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* How It Works */}
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>How It Works</h2>
             <p className={styles.sectionSubtitle}>Order anything in three simple steps</p>
@@ -144,34 +120,52 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Features */}
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Why Choose Allo?</h2>
             <div className={styles.features}>
               <div className={styles.feature}>
-                <div className={styles.featureIcon}>⚡</div>
-                <h3>Lightning Fast</h3>
-                <p>Minutes, not hours. From stores that are already in your neighborhood.</p>
+                <div className={styles.featureIcon}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3>30-Minute Promise</h3>
+                <p>Not 10 minutes with a stressed rider. Real deliveries in 30 minutes from stores walking distance away.</p>
               </div>
               <div className={styles.feature}>
-                <div className={styles.featureIcon}>🏪</div>
-                <h3>Real Local Stores</h3>
-                <p>From the kirana and shops you already trust. We support real businesses, not ghost kitchens or dark stores.</p>
+                <div className={styles.featureIcon}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9 22V12H15V22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Your Neighborhood Uncle</h3>
+                <p>The kirana that knows your family. The medical store that keeps your history. Real relationships, not algorithms.</p>
               </div>
               <div className={styles.feature}>
-                <div className={styles.featureIcon}>💬</div>
-                <h3>Simple WhatsApp</h3>
-                <p>No app to download. Just message us like you'd message a friend.</p>
+                <div className={styles.featureIcon}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3>No App Bullshit</h3>
+                <p>Send a photo of what you need. Or just text "same as last time". We're humans, not robots.</p>
               </div>
               <div className={styles.feature}>
-                <div className={styles.featureIcon}>🥬</div>
-                <h3>Fresh & Local</h3>
-                <p>Real food from real stores. Fresh groceries, snacks, medicines — from shops in your area.</p>
+                <div className={styles.featureIcon}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8 5V3M16 5V3M3 11H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Picked This Morning</h3>
+                <p>Fresh vegetables from morning markets. Not warehouse stock from last week.</p>
               </div>
             </div>
           </section>
 
-          {/* Vision */}
           <section className={`${styles.section} ${styles.visionSection}`}>
             <div className={styles.visionContent}>
               <h2 className={styles.sectionTitle}>The Future is Local</h2>
@@ -198,7 +192,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* CTA Section */}
           <section className={styles.ctaSection}>
             <h2>Ready to try Allo?</h2>
             <p>Join hundreds of neighbors who've already made the switch</p>
@@ -220,41 +213,7 @@ export default function Home() {
           </section>
         </main>
 
-        {/* Footer */}
-        <footer className={styles.footer}>
-          <div className={styles.footerContent}>
-            <div className={styles.footerBrand}>
-              <Image
-                src="/logo.svg"
-                alt="Allo Logo"
-                width={100}
-                height={33}
-              />
-              <p>Making your neighborhood your marketplace</p>
-            </div>
-            <div className={styles.footerLinks}>
-              <div>
-                <h4>Service Areas</h4>
-                <ul>
-                  <li>Hauz Khas</li>
-                  <li>Greater Kailash</li>
-                  <li>Defence Colony</li>
-                  <li>Panchsheel</li>
-                  <li>Saket</li>
-                </ul>
-              </div>
-              <div>
-                <h4>Contact</h4>
-                <ul>
-                  <li><a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick('footer')}>WhatsApp</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className={styles.footerBottom}>
-            <p>&copy; {new Date().getFullYear()} Allo. All rights reserved.</p>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );
