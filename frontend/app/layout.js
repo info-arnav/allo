@@ -39,9 +39,9 @@ export const metadata = {
     siteName: "Allo",
     images: [
       {
-        url: "/logo.png",
-        width: 1200,
-        height: 630,
+        url: "/logo-128x128.png",
+        width: 128,
+        height: 128,
         alt: "Allo - Hyperlocal Commerce",
       },
     ],
@@ -53,7 +53,7 @@ export const metadata = {
     title: "Allo - Your Neighborhood, Delivered",
     description:
       "Get everything from local stores delivered in minutes. No mall visits needed.",
-    images: ["/logo.png"],
+    images: ["/logo-128x128.png"],
   },
   robots: {
     index: true,
@@ -72,9 +72,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/logo-circle.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/logo-circle.png" />
+        <link rel="apple-touch-icon" href="/logo-circle-128x128.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#F6B215" />
       </head>
