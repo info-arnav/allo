@@ -81,6 +81,12 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <GoogleAnalytics GA_MEASUREMENT_ID="G-GLYXD2SJN6" />
         {children}
+        <digiiq-chatbot agent-id="9ecd59b2-4c7c-4e7f-a7ee-7501fb493729"></digiiq-chatbot>
+        <script
+          src="https://www.digiiq.ai/scripts/chat-bot-widget.js"
+          async
+          type="text/javascript"
+        ></script>
       </body>
     </html>
   );
